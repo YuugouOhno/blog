@@ -35,4 +35,15 @@ class PostController extends Controller
         return redirect('/posts/' . $post->id);
     }
 
+    public function edit(Post $post)
+    {
+        return view('posts/edit')->with(['post' => $post]);
+    }
+    
+    public function update(PostRequest $request, Post $post)
+    {
+        $input = $request['post'];
+        $post->fill($input)->save();
+        return redirect('/posts/' . $post->id);
+    }
 }
