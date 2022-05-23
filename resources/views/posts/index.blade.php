@@ -14,6 +14,11 @@
                 <div class='post'>
                     <a href='/posts/{{$post->id}}'><h2 class='title'>{{$post->title}}</h2></a>
                     <p class='body'>{{$post->body}}</p>
+                    <form action='/posts/{{$post->id}}' method='POST'>
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value='delete'>
+                    </form>
                 </div>
             @endforeach
         </div>
