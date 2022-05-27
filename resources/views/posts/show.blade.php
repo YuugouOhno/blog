@@ -17,5 +17,6 @@
             <div class='back'>
                 [<a href='/'>back</a>]
             </div>
+            <p>{{$post}}</p>
     </body>
 </html>
