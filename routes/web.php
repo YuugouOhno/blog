@@ -19,6 +19,8 @@ Route::get('/posts/{post}', 'PostController@show');
 Route::post('/posts', 'PostController@store');
 Route::delete('/posts/{post}', 'PostController@delete');
 
+Route::get('/categories/{category}', 'CategoryController@index');
+
 
 /*
 Route::get('/', function() {

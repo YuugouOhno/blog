@@ -11,6 +11,14 @@
             <form action='/posts/{{$post->id}}' method='POST'>
                 @csrf
                 @method('PUT')
+                <div class="category">
+                    <h2>Category</h2>
+                    <select name="post[category_id]">
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <div class='title'>
                     <h2>Title</h2>
                     <input type='text' name='post[title]' placeholder='title' value="{{$post->title}}">
