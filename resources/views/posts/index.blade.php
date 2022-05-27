@@ -14,10 +14,10 @@
                 <div class='post'>
                     <a href='/posts/{{$post->id}}'><h2 class='title'>{{$post->title}}</h2></a>
                     <p class='body'>{{$post->body}}</p>
-                    <form action='/posts/{{$post->id}}' method='POST'>
+                    <form id="form" action='/posts/{{$post->id}}' method='POST'>
                         @csrf
                         @method('DELETE')
-                        <input type="submit" value='delete'>
+                        <input type='button' value='delete' onclick="buttonClick()">
                     </form>
                 </div>
             @endforeach
@@ -25,5 +25,13 @@
         <div>
             {{$posts->links()}}
         </div>
+        
+    <script>
+        function buttonClick(){
+            if(confirm("削除しますか？")){
+                document.getElementById("form").submit();
+            }
+        }
+	</script>
     </body>
 </html>
